@@ -1,5 +1,4 @@
 const fs = require("fs");
-const { argv } = require("process");
 const readFile = function(){
     try{    
         

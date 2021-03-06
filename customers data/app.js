@@ -1,6 +1,5 @@
 
 const yargs = require("yargs");
-const chalk = require('chalk');
 const myMethods = require('./Functions');
 const { command } = require("yargs");
 const { type } = require("os");
@@ -45,7 +44,7 @@ yargs.command({
         newadd:{type:Number}
     },
     handler: function(argv){
-        myMethods.addbalance(argv.id,argv.newadd);
+        myshMethods.addbalance(argv.id,argv.newadd);
     }
 })
 yargs.argv
