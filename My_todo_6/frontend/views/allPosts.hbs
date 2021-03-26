@@ -1,0 +1,22 @@
+{{>header}}
+{{>navbar}}
+<section class="container my-3">
+    <h1 class="text-center">All Posts</h1>
+    <div class="row">
+        {{#each posts}}
+        <div class="col-4">
+            <div class="m-2 p-2 border border-primary border-2">
+                <h3>{{this.title}}</h3>
+                <p>{{this.body}}</p>
+                <a href="/allPosts/{{this.id}}" class="btn btn-primary">more</a>
+            </div>
+        </div>
+        {{else}}
+        <div class="alert alert-danger">
+            No Tasks Found
+        </div>
+        {{/each}}
+    </div>
+
+
+{{>footer}}

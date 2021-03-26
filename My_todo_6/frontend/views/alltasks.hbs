@@ -1,0 +1,20 @@
+{{>header}}
+{{>navbar}}
+<section class="container my-3">
+    <h1 class="text-center">All tasks</h1>
+    <div class="row">
+        {{#each tasks}}
+        <div class="col-12">
+            <div class="m-2 p-2 border border-primary border-2">
+                <h3>{{this.title}}</h3>
+                <p>{{this.body}}</p>
+                <a href="/allTasks/{{@index}}" class="btn btn-primary">more</a>
+               <!-- <a href="/allTasks/{{@index}}" class="btn btn-danger">delete</a>-->
+            </div>
+        </div>
+        {{else}}
+        <div class="alert alert-danger">
+            No Tasks Found
+        </div>
+        {{/each}}
+    </div>

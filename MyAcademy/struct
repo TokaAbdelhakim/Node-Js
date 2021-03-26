@@ -1,0 +1,44 @@
+Admin ??
+2 files middle ware:
+auth / admin auth
+user ==> student, teacher, parent
+        courses ---
+        progress ---
+        userId ==>done
+        name =>done
+        birth date =>done
+        age =>done
+        country =>done
+        email  =>done
+        username =>done
+        password   => done   //alphanumeric from 4 to 15 & aA to zZ  //wout validation
+        status: student/teacher/parent  =>done
+        school =>done
+        
+
+
+Routes ==>
+        login ==>done
+        create account  ==>done 
+        logout  ==>done
+        showAll ==> done + date 7/17/1997
+        show all students ==>done
+        show all parents ==>done
+        show all teachers ==>done
+        showprofile    ==> done
+        editprofile - upload photo ==> done
+        activate ==> done
+        deactivate   ==> done
+        remove account 
+        register on specific course
+        show courses fit with age/interests
+
+remove
+addcourse
+validation age before add course
+presave course check req.user.age
+admin add course
+
+npm init --y
+npm i express mongoose validator jsonwebkit bcryptjs env-cmd multer
+npm run dev
