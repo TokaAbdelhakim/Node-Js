@@ -1,0 +1,60 @@
+{{myForm.value|json}}
+<section class="container my-4">
+    <div class="row justify-content-center">
+        <div class="col-6">
+    <h2 class="text-center">Create New Account</h2>
+    <div class="alert alert-danger" *ngIf = "msg!=''">{{msg}}</div>
+    <form class="form-group" #myForm="ngForm" (ngSubmit)="onCreate(myForm)">
+        <label>*FirstName</label>
+        <input class="form-control m-1" name="FirstName" [(ngModel)]=newuser.FirstName #FName='ngModel'
+        required
+        maxlength="7"
+        minlength="3"
+         [ngClass] ='{"red":(FName.invalid && (FName.touched || FName.dirty)) || (myForm.submitted && FName.invalid)}'>
+        <div *ngIf="(FName.invalid && (FName.touched || FName.dirty)) || (myForm.submitted && FName.invalid)">
+            <div class="alert alert-danger" *ngIf="FName?.errors?.required">
+                First Name is required 
+            </div>
+            <div class="alert alert-danger" *ngIf="FName?.errors?.minlength">
+                the min-length is three
+            </div>
+        </div>
+        
+        <label>*LastName</label>
+        <input class="form-control m-1" name="LastName" #lName='ngModel' [(ngModel)]=newuser.LastName
+        required
+        maxlength="7"
+        minlength="3"
+        [ngClass] = '{"red":(lName.invalid && (lName.touched || lName.dirty)) || (myForm.submitted && lName.invalid)}'>
+        <div *ngIf="(lName.invalid && (lName.touched || lName.dirty)) || (myForm.submitted && lName.invalid)">
+            <div class="alert alert-danger" *ngIf="lName?.errors?.required">
+                Last Name is required 
+            </div>
+            <div class="alert alert-danger" *ngIf="lName?.errors?.minlength">
+                the min-length is three
+            </div>
+        </div>
+        <label>*email</label>
+        <input class="form-control m-1" type="email" name="email" #email='ngModel' [(ngModel)]=newuser.email
+        email
+        >
+        <div *ngIf="(email.invalid) || (myForm.submitted && FName.invalid)" class="alert alert-danger">
+            invalid email
+        </div>
+        <label>*username</label>
+        <input class="form-control m-1" name="username" [(ngModel)]=newuser.username> 
+        <label>*password</label>
+        <input class="form-control m-1" type="password" name="password" [(ngModel)]=newuser.password>
+        <label>*birthdate</label>
+        <input class="form-control m-1" name="birthdate" [(ngModel)]=newuser.birthdate>
+        <label>*country</label> 
+        <input class="form-control m-1"  name="country" [(ngModel)]=newuser.country> 
+        <label>*status</label>
+        <input class="form-control m-1"  name="status" [(ngModel)]=newuser.status> 
+        <label>*school</label>
+        <input class="form-control m-1"  name="school"  [(ngModel)]=newuser.school>
+        <button class="btn btn-success" type="submit"> Create My Account </button>
+    </form>
+</div>
+</div>
+</section>
